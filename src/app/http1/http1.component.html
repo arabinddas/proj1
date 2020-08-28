@@ -1,0 +1,6 @@
+<div class="ui">
+  <h2>Basic GET request</h2>
+  <div><button class="ui button" (click)="makeRequest()">Send Request</button></div>
+  <div *ngIf="loading" style="margin-top: 10px">Loading...</div>
+  <p style="margin-top: 10px">{{data | json}}</p>
+</div>

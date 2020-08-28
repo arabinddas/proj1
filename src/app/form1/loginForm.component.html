@@ -1,0 +1,21 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Demo Form: Login</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onFormSubmit(myForm)">
+    <div class="field">
+      <label for="uname1">Username:&nbsp;</label>
+      <input id="uname1" [formControl]="myForm.controls['uname']"
+             [class.error]="myForm.touched && (!myForm.get('uname').valid)" />
+      <div *ngIf="myForm.touched && (!myForm.controls['uname'].valid)" class="ui error message">
+        Username is invalid
+      </div>
+    </div>
+    <div class="field">
+      <label for="pwd1">Password:&nbsp;</label>
+      <input id="pwd1" [formControl]="myForm.controls['pwd']" />
+      <div *ngIf="myForm.touched && (!myForm.get('pwd').valid)" class="ui error message">
+        Password is required
+      </div>
+    </div>
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>

@@ -1,3 +1,40 @@
 <h1>
   {{title}}
 </h1>
+<div>
+  <app-yt-search></app-yt-search>
+</div>
+<div>
+  <app-data1></app-data1>
+</div>
+<div id="encapsulation_demo1">
+  <app-native-encap></app-native-encap>
+</div>
+<div appPopup message="Hello Popup" #pop1="appPopup">
+  Popup message
+  <div><button (click)="pop1.displayMsg($event.target)">Pop2</button></div>
+</div>
+<p>Lorem Ipsum lkjsdlfjslfdj lskdjflsjfs lkjsfs ygemrnbj nflsdui gasdifg iusdnksy</p>
+<button (click)="pop1.displayMsg($event.target)">Pop</button>
+<hr />
+<div app-message header="Hello Message" class="ui header">
+  This is content of the message
+</div>
+<br />
+<app-two-message>
+  <p>Message content here</p>
+  <p>Some more content</p>
+</app-two-message>
+<hr />
+<app-tab-set>
+  <app-tab title="Title1">Tab1 content</app-tab>
+  <app-tab title="Title2">Tab2 content</app-tab>
+  <app-tab title="Title3">Tab3 content</app-tab>
+</app-tab-set>
+<app-ng-changes-test1></app-ng-changes-test1>
+<hr />
+<app-ngIf-demo>
+  <div><p>Ansuman and Ananya</p></div>
+</app-ngIf-demo>
+<hr />
+<app-ch-wrapper></app-ch-wrapper>

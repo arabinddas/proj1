@@ -1,0 +1,22 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Demo Form: SKU</h2>
+  <form #formRef="ngForm" (ngSubmit)="handleSkuFormSubmission(formRef)">
+    <div class="field">
+      <label for="skuId">SKU:&nbsp;</label>
+      <input id="skuId" name="sku" placeholder="SKU" required minlength="3" ngModel />
+    </div>
+    <div class="field" style="margin-top: 10px">
+      <label for="priceId">Price:&nbsp;</label>
+      <input id="priceId" name="price" placeholder="Price" required ngModel />
+    </div>
+    <div style="margin-top: 10px">
+      <button type="submit" class="ui button">Submit</button>
+      <button type="reset" class="ui button" (click)="resetTheForm(formRef)">Reset</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="formRef.submitted && (!formRef.valid)">
+  <ul *ngFor="let m of errMsgs">
+    <li>{{m}}</li>
+  </ul>
+</div>
